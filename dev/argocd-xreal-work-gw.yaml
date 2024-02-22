@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: argocd-xreal-work-gw
+  namespace: myapp
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - argocd.xreal.work
+    port:
+      name: https
+      number: 443
+      protocol: HTTPS
+    tls:
+      credentialName: all.xreal.work
+      mode: SIMPLE
