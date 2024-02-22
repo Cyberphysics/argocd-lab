@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: argocd
-  namespace: argocd
+  namespace: myapp
 spec:
   gateways:
   - argocd-xreal-work-gw
@@ -16,6 +16,6 @@ spec:
       retryOn: gateway-error,connect-failure,refused-stream
     route:
     - destination:
-        host: argocd-server.argocd.svc.cluster.local
+        host: argocd-server.myapp.svc.cluster.local
         port:
           number: 80
