@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: argocd
-  namespace: myapp
+  namespace: argocd
 spec:
   gateways:
   - kube-public/all-xreal-work-gw
@@ -15,6 +15,6 @@ spec:
       retryOn: gateway-error,connect-failure,refused-stream
     route:
     - destination:
-        host: argocd-server.myapp.svc.cluster.local
+        host: argocd-server.argocd.svc.cluster.local
         port:
           number: 443
