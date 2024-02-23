@@ -5,8 +5,8 @@ metadata:
   namespace: myapp
 spec:
   gateways:
-  - argocd-xreal-work-gw
-  # - kube-public/all-xreal-work-gw
+  # - argocd-xreal-work-gw
+  - kube-public/all-xreal-work-gw
   hosts:
   - argocd.xreal.work
   http:
